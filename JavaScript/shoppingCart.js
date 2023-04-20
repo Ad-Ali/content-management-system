@@ -2,8 +2,8 @@ const addToBagButton = document.querySelector(".add-to-bag-button");
 const cart = document.querySelector("#cart");
 const cartCount = document.querySelector("#cart #cart-count");
 const innerCart = document.querySelector("#inner-cart");
-const jacketTitle = document.querySelector(".jacket-title");
-const jacketPrice = document.querySelector(".jacket-price");
+const jacketTitle = document.querySelector(".product-title");
+const jacketPrice = document.querySelector(".product-price");
 const bag = [];
 
 addToBagButton.addEventListener("click", () => {

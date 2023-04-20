@@ -1,14 +1,30 @@
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 5px;
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  height: 70vh;
+  justify-content: space-around;
 }
 
-.product {
-  padding: 0;
+.product-image {
+  flex-basis: 50%;
+  height: 100%;
+  width: auto;
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
   margin: 0;
 }
 
-.product img {
-  width: 100%;
+.product-details {
+  flex-basis: 50%;
+}
+
+.product-title {
+  font-size: 24px;
+}
+
+.product-price {
+  flex-basis: 50%;
+  font-size: 24px;
 }

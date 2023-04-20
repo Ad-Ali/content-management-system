@@ -1,0 +1,1470 @@
+:root,
+.CTA,
+.CTA2,
+::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+:root,
+.nav-menu.active {
+  background-color: #f6f6f6;
+}
+
+body,
+nav li {
+  background: #f6f6f6;
+}
+
+body,
+nav ul,
+.best-sellers-text,
+.view-all-text {
+  margin: 0;
+}
+
+body,
+nav li a,
+.hero-CTA a,
+.hero-description-about,
+.CTA a,
+.CTA2 a,
+.best-sellers-text,
+body > main > div.shop-front > div.shop-sidebar > div > a,
+.shop-sidebar,
+.view-all-text,
+.shop-display,
+body > main > div.empty-shopping-bag-text > p:nth-child(3) > a,
+body > main > div.environmental-policy-text > p:nth-child(3) > a,
+body > main > div.environmental-policy-text > p:nth-child(2) > a,
+.jacket-nav a,
+a.add-to-bag-button {
+  color: #0a3641;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  padding: 0;
+}
+
+.footer-container,
+.newsletter-box,
+.social-links,
+.text-container,
+.text-block-1,
+.text-block-2,
+.contact-form-container,
+.empty-shopping-bag-text,
+.environmental-policy-text,
+.jacket-container,
+.jacket-block-1,
+.jacket-block-2,
+.jacket-nav,
+.best-sellers-text,
+li.nav-item,
+.nav-menu,
+li.hover-menu-item,
+.nav-menu.active {
+  background-color: white;
+}
+
+header,
+nav ul li ul {
+  left: 0;
+}
+
+header,
+.shop-sidebar {
+  background: white;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Navigation */
+
+/* Originally I wrote a code which was giving a bug where the links in the dropdown menu where misplaced and "floating" wrong. 
+The resources used to learn how to make a dropdown menu which did not result in a buggy placement of the links in the dropdown: 
+https://css-tricks.com/solved-with-css-dropdown-menus/
+https://www.youtube.com/watch?v=gEbG3xyQoxA */
+
+nav {
+  height: 56.8px;
+  z-index: 2;
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.3rem;
+}
+
+nav li,
+nav ul li:hover > ul,
+ul li ul:hover,
+.bar,
+.fixed-size-items,
+.fixed-size-items-shop,
+.order-form-email,
+.fixed-size-items-shop {
+  display: block;
+}
+
+nav li {
+  float: left;
+  padding: 1rem;
+  transition-duration: 0.5s;
+}
+
+nav li:hover,
+.hamburger {
+  cursor: pointer;
+}
+
+nav li:hover {
+  background: #e7eaea;
+}
+
+nav ul li ul,
+.hero-description,
+.hero-CTA,
+.hero-description-women-menu,
+.hero-description-women,
+.hero-description-men-menu,
+.hero-description-men,
+.hero-description-about,
+.CTA,
+.CTA2 {
+  position: absolute;
+}
+
+nav ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  display: none;
+}
+
+nav ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+nav ul li ul li,
+.hero-image,
+.hero-image-women,
+.hero-image-men,
+.hero-image-new-collection,
+.hero-image-about,
+.women-and-men-jackets,
+.email-order-input,
+header {
+  width: 100%;
+}
+
+nav ul li ul li {
+  clear: both;
+}
+
+.navbar,
+.nav-menu,
+.women-and-men-jackets,
+.shop-front,
+.fixed-size-container,
+.fixed-size-container-shop,
+.newsletter,
+.newsletter-box,
+.read-more-text,
+.text-block-1,
+.text-block-2,
+.footer-links,
+.jacket-block-1,
+.jacket-block-2 {
+  display: flex;
+}
+
+.navbar,
+.nav-menu {
+  justify-content: space-between;
+}
+
+.navbar,
+.nav-menu .fixed-size-container,
+.fixed-size-container-shop,
+.fixed-size-container-shop {
+  align-items: center;
+}
+
+.navbar {
+  min-height: 80px;
+  padding: 0 24px;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #0a3641;
+}
+
+.nav-link {
+  margin: 16px 0;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+/* End Navigation */
+
+/* Logo */
+
+.logo {
+  width: 70px;
+  margin-top: 9.5px;
+  margin-left: 14.5px;
+}
+
+/* End Logo */
+
+/* Hero */
+
+/* Used this resource to figure out how to make the hero centered: https://stackoverflow.com/questions/64563675/best-method-for-making-hero-image-fill-entire-screen-on-mobile-without-ruining-q */
+
+.hero,
+.hero-description-second-p,
+.hero-women,
+.hero-description-women-p,
+.hero-men,
+.hero-description-men-p,
+.hero-description-about-p,
+.women-and-men-jackets,
+body > main > div.shop-front > div.shop-sidebar > div,
+.buy-button,
+.buy-button-shop,
+nav li,
+nav,
+.contact-form input::placeholder,
+.buy-button-shop {
+  position: relative;
+}
+
+.hero-image {
+  height: 40vw;
+  background-image: url(/images/hero/pexels-till-daling-1920-1080.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-description {
+  bottom: 40%;
+  left: 10%;
+  color: rgb(10, 54, 65);
+  font-size: larger;
+  font-weight: 500;
+}
+
+.hero-description-second-p {
+  font-weight: 900;
+  font-size: 28px;
+  bottom: 20px;
+}
+
+.hero-CTA {
+  bottom: 5%;
+  left: 40%;
+  text-align: center;
+  color: rgb(228, 228, 228);
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.hero-CTA-text {
+  text-transform: uppercase;
+}
+
+.hero-CTA-button {
+  font-weight: 600;
+  border-radius: 2px;
+  background-color: rgb(228, 228, 228);
+}
+
+.hero-CTA-button,
+.CTA-button,
+.CTA-button-2 {
+  border: 2px solid white;
+}
+
+/* End Hero Women's Shop */
+
+/* Hero Men's Shop */
+
+.hero-image-men {
+  height: 22vw;
+  background-image: url(/images/hero/hero-image-men-shop.jpg);
+  background-size: cover;
+  background-position: center;
+  outline: 10px solid #f6f6f6;
+  outline-offset: -4px;
+}
+
+.hero-description-men {
+  bottom: 27%;
+  left: 5%;
+  font-size: larger;
+  font-weight: 500;
+}
+
+.hero-description-men-p {
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.hero-description-men-menu {
+  bottom: 7%;
+  left: 30%;
+  color: white;
+}
+
+.hero-description-men-menu a span {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-description-men p {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-description-men p {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-description-men p {
+    font-size: 28px;
+  }
+  .hero-image-men {
+    height: 30vw;
+  }
+  .hero-description-men-menu {
+    left: 5%;
+  }
+  body > main > div.shop-front {
+    display: block;
+  }
+  body > main > div.shop-front > div.shop-display,
+  body > main > div.shop-front > div.shop-sidebar {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .hero-description-men p {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 578px) {
+  .hero-description-men p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 478px) {
+  .hero-description-men p {
+    font-size: 17px;
+  }
+  .hero-image-women {
+    height: 35vw;
+  }
+}
+@media screen and (max-width: 378px) {
+  .hero-description-men p {
+    font-size: 15px;
+  }
+}
+
+/* End Hero Men's Shop */
+
+/* Hero New Collection */
+
+.hero-image-new-collection {
+  height: 22vw;
+  background-image: url(/images/hero/new-collection-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  outline: 10px solid #f6f6f6;
+  outline-offset: -4px;
+}
+
+/* End Hero New Collection */
+
+/* Hero ABOUT */
+
+.hero-image-about {
+  height: 22vw;
+  background-image: url(/images/hero/hero-image-about.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-description-about {
+  bottom: 27%;
+  left: 5%;
+  font-size: larger;
+  font-weight: 500;
+}
+
+.hero-description-about-p {
+  font-weight: 900;
+  font-size: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-description-about p {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-description-about p {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-description-about p {
+    font-size: 28px;
+  }
+  .hero-image-about {
+    height: 30vw;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .hero-description-about p {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 578px) {
+  .hero-description-about p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 478px) {
+  .hero-description-about p {
+    font-size: 17px;
+  }
+  .hero-image-about {
+    height: 35vw;
+  }
+}
+@media screen and (max-width: 378px) {
+  .hero-description-about p {
+    font-size: 15px;
+  }
+}
+
+/* End Hero ABOUT */
+
+/* Women and Men jacket choice */
+
+.women-jacket-choice,
+.men-jacket-choice,
+.shop-sidebar,
+.shop-section,
+.info-section,
+.help-section,
+.member-section {
+  flex: 1;
+}
+
+.women-jacket-choice,
+.men-jacket-choice {
+  width: 50%;
+}
+
+.CTA {
+  bottom: 75%;
+  left: 5%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.CTA-button {
+  font-weight: 600;
+  border-radius: 2px;
+  background-color: rgb(228, 228, 228);
+}
+
+/* MEN's CTA */
+
+.CTA2 {
+  bottom: 75%;
+  left: 5%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.CTA2-button {
+  font-weight: 600;
+  border: 2px solid white;
+  border-radius: 2px;
+  background-color: rgb(228, 228, 228);
+}
+
+.hero-CTA-button:hover,
+.CTA2-button:hover,
+.CTA-button:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+/* End Women and Men jacket choice */
+
+/* Best Sellers */
+
+.best-sellers-text {
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+
+/* End Best Sellers */
+
+/* Shop */
+
+.shop-sidebar {
+  width: 50%;
+}
+
+body > main > div.shop-front > div.shop-sidebar > div > h3 {
+  font-size: 20px;
+}
+
+body > main > div.shop-front > div.shop-sidebar > div {
+  left: 20%;
+}
+
+body > main > div.shop-front > div.shop-sidebar > div > h3:nth-child(1) {
+  padding-top: 12px;
+}
+
+body > main > div.shop-front > div.shop-sidebar > div > a:nth-child(16) > p {
+  padding-bottom: 12px;
+}
+
+.shop-display {
+  width: 50%;
+  flex: 3;
+}
+
+.view-all-text {
+  background-color: #ffffff;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+
+/* End shop */
+
+/* Fixed size container */
+
+.fixed-size-container {
+  background-color: #ffffff;
+  padding: 30px 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.fixed-size-items {
+  width: 300px;
+  height: 450px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin: 0 10px 30px 10px;
+  font-size: 20px;
+}
+
+.fixed-size-pic,
+.fixed-size-pic-2,
+.fixed-size-pic-3,
+.fixed-size-pic-4,
+.fixed-size-pic-5,
+.fixed-size-pic-6,
+.fixed-size-pic-7,
+.fixed-size-pic-8 {
+  width: 300px;
+  height: 350px;
+  margin: 0 auto;
+}
+.fixed-size-pic {
+  background-image: url(/images/jacket-images/green-pocket-delux.jpg);
+}
+
+.fixed-size-pic-2 {
+  background-image: url(/images/jacket-images/puffy-white-waffle.jpg);
+}
+
+.fixed-size-pic-3 {
+  background-image: url(/images/jacket-images/blue-horizon.jpg);
+}
+
+.fixed-size-pic-4 {
+  background-image: url(/images/jacket-images/zipped-ready.jpg);
+}
+
+.fixed-size-pic-5 {
+  background-image: url(/images/jacket-images/red-rider-hood.jpg);
+}
+
+.fixed-size-pic-6 {
+  background-image: url(/images/jacket-images/urban-organizer.jpg);
+}
+
+.fixed-size-pic-7 {
+  background-image: url(/images/jacket-images/jumping-jacker.jpg);
+}
+
+.fixed-size-pic-8 {
+  background-image: url(/images/jacket-images/down-looker.jpg);
+}
+
+.pic-text {
+  font-weight: bold;
+  margin: 5px 0 5px 0;
+}
+
+.price {
+  margin: 5px 0 5px 0;
+}
+
+.color-picker {
+  margin: 5px 0 8px 0;
+}
+
+.buy-button {
+  display: inline;
+  border: rgba(10, 54, 65, 0.7) solid 2px;
+  border-radius: 2px;
+  padding: 0px 20px 2px 20px;
+  margin: 10px 10px;
+  bottom: 7.5px;
+}
+
+.buy-button a {
+  color: rgba(10, 54, 65, 0.7);
+}
+
+.color-price-row {
+  vertical-align: middle;
+}
+
+/* End fixed size container */
+
+/* Fixed size container SHOP WOMEN*/
+
+.fixed-size-container-shop {
+  background-color: #ffffff;
+  padding: 30px 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.fixed-size-items-shop {
+  width: 250px;
+  height: 400px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin: 0 10px 30px 10px;
+  font-size: 20px;
+}
+
+.fixed-size-pic-shop {
+  background-image: url(/images/jacket-images-women/warm-enough.png);
+}
+
+.fixed-size-pic-2-shop {
+  background-image: url(/images/jacket-images-women/horizon-grey.jpg);
+}
+
+.fixed-size-pic-3-shop {
+  background-image: url(/images/jacket-images-women/red-mist.png);
+}
+
+.fixed-size-pic-4-shop {
+  background-image: url(/images/jacket-images-women/lake-chic.jpg);
+}
+
+.fixed-size-pic-5-shop {
+  background-image: url(/images/jacket-images-women/yellow-yonder.jpg);
+}
+
+.fixed-size-pic-6-shop {
+  background-image: url(/images/jacket-images-women/crystal-coat.png);
+}
+
+.fixed-size-pic-7-shop {
+  background-image: url(/images/jacket-images-women/puffy-white-waffle.png);
+}
+
+.fixed-size-pic-8-shop {
+  background-image: url(/images/jacket-images-women/brown-waffle.jpg);
+}
+
+.fixed-size-pic-9-shop {
+  background-image: url(/images/jacket-images-women/urban-layers.png);
+}
+
+.fixed-size-pic-10-shop {
+  background-image: url(/images/jacket-images-women/grey-waffle.jpg);
+}
+
+.fixed-size-pic-11-shop {
+  background-image: url(/images/jacket-images-women/fur-feuxbulous.png);
+}
+
+.fixed-size-pic-12-shop {
+  background-image: url(/images/jacket-images-women/chill-me-not.jpg);
+}
+
+.pic-text-shop {
+  font-weight: bold;
+  margin: 5px 0 5px 0;
+}
+
+.price-shop {
+  margin: 5px 0 5px 0;
+}
+
+.color-picker-shop {
+  margin: 5px 0 8px 0;
+}
+
+.buy-button-shop {
+  display: inline;
+  border: rgba(10, 54, 65, 0.7) solid 2px;
+  border-radius: 2px;
+  padding: 0px 20px 2px 20px;
+  margin: 10px 10px;
+  bottom: 7.5px;
+}
+
+.buy-button-shop a {
+  color: rgba(10, 54, 65, 0.7);
+}
+
+.color-price-row-shop {
+  vertical-align: middle;
+}
+
+/* Fixed size container SHOP MEN*/
+
+.fixed-size-container-shop {
+  background-color: #ffffff;
+  padding: 30px 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.fixed-size-items-shop {
+  width: 250px;
+  height: 400px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin: 0 10px 30px 10px;
+  font-size: 20px;
+}
+
+.fixed-size-pic-shop-men,
+.fixed-size-pic-2-shop-men,
+.fixed-size-pic-3-shop-men,
+.fixed-size-pic-4-shop-men,
+.fixed-size-pic-5-shop-men,
+.fixed-size-pic-6-shop-men,
+.fixed-size-pic-7-shop-men,
+.fixed-size-pic-8-shop-men,
+.fixed-size-pic-9-shop-men,
+.fixed-size-pic-10-shop-men,
+.fixed-size-pic-11-shop-men,
+.fixed-size-pic-12-shop-men,
+.fixed-size-pic-shop,
+.fixed-size-pic-2-shop,
+.fixed-size-pic-3-shop,
+.fixed-size-pic-4-shop,
+.fixed-size-pic-5-shop,
+.fixed-size-pic-6-shop,
+.fixed-size-pic-7-shop,
+.fixed-size-pic-8-shop,
+.fixed-size-pic-9-shop,
+.fixed-size-pic-10-shop,
+.fixed-size-pic-11-shop,
+.fixed-size-pic-12-shop {
+  width: 250px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.fixed-size-pic-shop-men {
+  background-image: url(/images/jacket-images-men/white-shred.jpg);
+}
+
+.fixed-size-pic-2-shop-men {
+  background-image: url(/images/jacket-images-men/blue-thinker.jpg);
+}
+
+.fixed-size-pic-3-shop-men {
+  background-image: url(/images/jacket-images-men/red-y-for-action.jpg);
+}
+
+.fixed-size-pic-4-shop-men {
+  background-image: url(/images/jacket-images-men/jumpy-jumpy.png);
+}
+
+.fixed-size-pic-5-shop-men {
+  background-image: url(/images/jacket-images-men/green-go.jpg);
+}
+
+.fixed-size-pic-6-shop-men {
+  background-image: url(/images/jacket-images-men/walky-talky.jpg);
+}
+
+.fixed-size-pic-7-shop-men {
+  background-image: url(/images/jacket-images-men/stillness.png);
+}
+
+.fixed-size-pic-8-shop-men {
+  background-image: url(/images/jacket-images-men/pockets-bonanza.png);
+}
+
+.fixed-size-pic-9-shop-men {
+  background-image: url(/images/jacket-images-men/ski-ip-ity.jpg);
+}
+
+.fixed-size-pic-10-shop-men {
+  background-image: url(/images/jacket-images-men/chin-tucky.png);
+}
+
+.fixed-size-pic-11-shop-men {
+  background-image: url(/images/jacket-images-men/green-look.png);
+}
+
+.fixed-size-pic-12-shop-men {
+  background-image: url(/images/jacket-images-men/blu-blues.png);
+}
+
+.pic-text-shop {
+  font-weight: bold;
+}
+
+.price-shop,
+.pic-text-shop {
+  margin: 5px 0 5px 0;
+}
+
+.color-picker-shop {
+  margin: 5px 0 8px 0;
+}
+
+.buy-button-shop {
+  display: inline;
+  border: rgba(10, 54, 65, 0.7) solid 2px;
+  border-radius: 2px;
+  padding: 0px 20px 2px 20px;
+  margin: 10px 10px;
+  bottom: 7.5px;
+}
+
+.buy-button-shop a {
+  color: rgba(10, 54, 65, 0.7);
+}
+
+.color-price-row-shop {
+  vertical-align: middle;
+}
+
+/* End fixed size container SHOP MEN*/
+
+/* Newsletter */
+
+.newsletter {
+  height: 450px;
+  background-color: rgb(225, 222, 216);
+}
+
+.newsletter-box {
+  width: 60%;
+  justify-content: center;
+  margin: auto;
+  padding: 20px 100px 0px 100px;
+}
+
+.newsletter-pic {
+  width: 200px;
+  height: 15%;
+  margin: auto;
+  padding-bottom: 3%;
+}
+
+.newsletter-logo {
+  width: 100px;
+}
+
+.newsletter form {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 10%;
+}
+
+.newsletter-description {
+  padding: 10%;
+  padding-bottom: 0;
+}
+
+.newsletter-description-1 {
+  font-weight: 1000;
+  margin-bottom: 3%;
+  font-size: 28px;
+  color: rgba(10, 54, 65, 1);
+}
+
+.newsletter-description-2 {
+  text-align: center;
+  margin: 0 5% 3% 5%;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(10, 54, 65, 0.7);
+}
+
+.newsletter-description-3 {
+  text-align: center;
+  margin: 0 5%;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(10, 54, 65, 0.4);
+  margin-bottom: 5%;
+}
+
+.newsletter label {
+  display: none;
+}
+
+.read-more-text {
+  width: 200px;
+  margin: auto;
+  padding-bottom: 3%;
+  text-align: center;
+  color: rgba(10, 54, 65, 0.4);
+}
+
+.read-more-text p {
+  font-size: 16px;
+}
+
+.bold-link {
+  color: rgba(10, 54, 65, 0.7);
+  font-weight: 800;
+}
+
+.bold-link,
+.buy-button-shop a,
+.buy-button-shop,
+.buy-button a,
+.buy-button,
+.CTA2 a,
+.CTA a,
+.hero-CTA a,
+nav li,
+a {
+  text-decoration: none;
+}
+
+.newsletter input {
+  background-color: rgb(225, 222, 216);
+  padding: 10px;
+  font-weight: 700;
+  color: rgba(10, 54, 65, 1);
+  border-color: rgba(10, 54, 65, 0.5);
+}
+
+.input-box {
+  border: none;
+}
+
+::placeholder {
+  font-weight: 700;
+}
+
+/* End Newsletter */
+
+/* Footer */
+
+.footer-container {
+  height: 450px;
+}
+
+.footer-links {
+  height: 225px;
+  margin: 0px 100px 0 100px;
+  padding-top: 20px;
+}
+
+.footer-links h3 {
+  color: rgba(10, 54, 65);
+}
+
+.footer-links p {
+  font-size: 15px;
+  color: rgba(10, 54, 65, 0.7);
+}
+
+.shop-section {
+  width: 25%;
+}
+
+.info-section {
+  width: 25%;
+}
+
+.help-section {
+  width: 25%;
+}
+
+.member-section {
+  width: 25%;
+}
+
+.member-section a {
+  color: rgba(10, 54, 65, 0.7);
+  font-weight: 800;
+}
+
+.social-links {
+  height: 225px;
+}
+
+body > footer > div > div.social-links > div.social-icons {
+  text-align: center;
+  opacity: 80%;
+}
+
+body > footer > div > div.social-links > div:nth-child(2) > p {
+  margin: 10px 0 10px 0;
+  color: rgba(10, 54, 65, 0.5);
+}
+
+body > footer > div > div.social-links > div:nth-child(2) {
+  text-align: center;
+  width: auto;
+  margin: 0px 100px 30px 100px;
+  font-size: 14px;
+}
+
+body > footer > div > div.social-links > div:nth-child(3) > img {
+  width: 100px;
+  text-align: center;
+}
+
+body > footer > div > div.social-links > div:nth-child(3) {
+  text-align: center;
+}
+
+.social-icons img {
+  padding: 0 5px;
+}
+
+/*  End Footer */
+
+/* About page */
+
+body > main > div.hero-men > div.hero-description-about > p {
+  left: 100%;
+}
+
+.text-container {
+  text-align: justify;
+}
+
+.text-block-1,
+.text-block-2 {
+  padding: 100px 100px 25px;
+  max-width: 1200px;
+  justify-content: center;
+  margin: auto;
+}
+
+.text-block-2 {
+  padding: 0 100px 40px 100px;
+}
+
+.text-block-2-p {
+  padding-left: 50px;
+}
+
+.text-block-1-p {
+  padding-right: 50px;
+}
+
+.text-block-1-p h2,
+.text-block-2-p h2 {
+  margin-top: 0;
+}
+
+.picture-block-2 img {
+  width: 500px;
+}
+
+/* End About page */
+
+/* Contact Page */
+
+.contact-form-info {
+  text-align: center;
+  padding-top: 50px;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.contact-form {
+  text-align: center;
+}
+
+.contact-form-email {
+  padding-bottom: 10px;
+}
+
+.contact-form-message {
+  padding-bottom: 10px;
+}
+
+.contact-form-submit {
+  padding-bottom: 50px;
+}
+
+.contact-form input {
+  background-color: rgb(225, 222, 216);
+  padding: 10px;
+  font-weight: 700;
+  color: rgba(10, 54, 65, 1);
+  border-color: rgba(10, 54, 65, 0.5);
+}
+
+body > main > div:nth-child(2) > form > div.contact-form-email > label {
+  display: none;
+}
+
+body > main > div:nth-child(2) > form > div.contact-form-message > label {
+  display: none;
+}
+
+.contact-form input::placeholder {
+  font-weight: 600;
+  bottom: 45%;
+}
+
+#email {
+  width: 50%;
+}
+
+#text {
+  height: 100px;
+  width: 50%;
+}
+
+body > main > div.contact-form-container > p {
+  text-align: center;
+  margin-top: 0;
+  padding: 20px 20px 0;
+}
+
+/* End Contact Page */
+
+/* Empty Shopping Bag */
+
+.empty-shopping-bag-text {
+  text-align: center;
+  padding: 10% 0 10%;
+}
+
+.empty-shopping-bag-text h1 {
+  padding: 0 0 10%;
+}
+
+body > main > div.empty-shopping-bag-text > p:nth-child(3) > a {
+  font-weight: 800;
+}
+
+body > main > div.empty-shopping-bag-text {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* End Empty Shopping Bag */
+
+/* Membership page */
+
+.member-bonus-text {
+  font-weight: 800;
+}
+
+/* End Membership page */
+
+/* Environmental-policy-text */
+
+.environmental-policy-text {
+  padding: 10% 0 10%;
+}
+
+.environmental-policy-text h1 {
+  padding: 0 0 0%;
+}
+
+body > main > div.environmental-policy-text > p:nth-child(3) > a {
+  font-weight: 800;
+}
+
+body > main > div.environmental-policy-text {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+body > main > div.environmental-policy-text > p:nth-child(2) > a {
+  font-weight: 600;
+}
+/* End environmental-policy-text */
+
+/* Jacket Specific Page */
+
+.jacket-container {
+  text-align: justify;
+  padding-bottom: 50px;
+}
+
+.jacket-block-1 {
+  text-align: center;
+}
+
+.jacket-block-1,
+.jacket-block-2 {
+  padding: 50px 100px 25px;
+  max-width: 1200px;
+  justify-content: center;
+  margin: auto;
+}
+
+.jacket-block-2 {
+  padding: 0 100px 40px 100px;
+}
+
+.jacket-block-2-p {
+  padding-left: 50px;
+}
+
+.jacket-block-1-p h2,
+.jacket-block-2-p h2 {
+  margin-top: 0;
+}
+
+.jacket-picture-block {
+  text-align: center;
+}
+
+.jacket-picture-block-2 img {
+  width: 400px;
+}
+
+body > main > div.jacket-container > div > div.jacket-picture-block > img {
+  width: 450px;
+}
+
+.jacket-nav {
+  text-align: center;
+  padding-top: 5%;
+}
+
+a.add-to-bag-button:hover {
+  cursor: pointer;
+  user-select: none;
+}
+
+a.add-to-bag-button {
+  position: relative;
+  z-index: 100;
+  font-weight: 600;
+  border: #0a3641 solid 2px;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+}
+
+.jacket-block-1-p-2 {
+  padding-top: 20px;
+  max-width: 500px;
+}
+
+/* End Jacket Specific Page */
+
+body > main > div.jacket-container > div > div.jacket-picture-block-bag > img {
+  width: 40vw;
+  margin-right: 50px;
+  border-radius: 1rem;
+}
+
+.jacket-block-1-p-2-bag {
+  margin: 0 auto;
+}
+
+body
+  > main
+  > div.jacket-container
+  > div
+  > div.jacket-block-1-p
+  > div.jacket-block-1-p-2-bag {
+  max-width: 300px;
+  padding-top: 20px;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-sizing: border-box;
+}
+.order-form-email {
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.hero-description-men-menu a,
+.hero-description-men,
+.hero-description-women,
+.hero-description-women-menu a {
+  color: white;
+}
+
+/* End Hero */
+
+/* Hero Women's Shop */
+
+.hero-image-women {
+  height: 22vw;
+  background-image: url(/images/hero/matt-heaton-AWu2De0kt_s-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  outline: 10px solid #f6f6f6;
+  outline-offset: -4px;
+}
+
+.hero-description-women {
+  bottom: 27%;
+  left: 5%;
+  font-size: larger;
+  font-weight: 500;
+}
+
+.hero-description-women-p {
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.hero-description-women-menu {
+  bottom: 7%;
+  left: 30%;
+}
+
+.hero-description-women-menu a span {
+  font-weight: 600;
+}
+
+/* CART */
+
+#cart {
+  z-index: 140;
+  opacity: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 70px;
+  width: 70px;
+  border: 2px solid black;
+  background: white;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  background-position: center;
+  background-size: contain;
+}
+
+#cart img {
+  margin: auto;
+  margin-top: 7px;
+  height: 50px;
+  width: 50px;
+}
+
+#cart-count {
+  position: absolute;
+  margin-top: 26px;
+  font-weight: 600;
+}
+
+#inner-cart {
+  z-index: 120;
+  overflow-y: scroll;
+  opacity: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 400px;
+  width: 300px;
+  border: 2px solid black;
+  background: white;
+  border-radius: 0.5rem;
+  padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  #inner-cart {
+    height: 100px;
+  }
+}
+
+#inner-cart li {
+  list-style: decimal;
+  display: flex;
+  gap: 15px;
+}
+
+#inner-cart img {
+  height: 40px;
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 0.5rem;
+}
+
+#cross {
+  z-index: 120;
+  height: 50px;
+  width: 50px;
+  margin-left: 260px;
+}

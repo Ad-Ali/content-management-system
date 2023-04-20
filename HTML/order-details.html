@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      table th,
+      table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      table th {
+        background-color: #eee;
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="submit"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Order Details</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody id="order-items"></tbody>
+    </table>
+
+    <div id="total-price"></div>
+
+    <form id="order-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required />
+
+      <input type="submit" value="Confirm Order" />
+    </form>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const totalPrice = urlParams.get("totalPrice");
+      const listItems = JSON.parse(
+        decodeURIComponent(urlParams.get("listItems"))
+      );
+
+      const totalPriceElement = document.querySelector("#total-price");
+      totalPriceElement.innerHTML =
+        "<b>Total price: " + totalPrice + " &euro;</b>";
+
+      const orderItemsElement = document.querySelector("#order-items");
+      for (let i = 0; i < listItems.length; i++) {
+        const item = listItems[i];
+        const tr = document.createElement("tr");
+        const nameTd = document.createElement("td");
+        const priceTd = document.createElement("td");
+
+        nameTd.innerText = item.title;
+        priceTd.innerText = item.price;
+
+        tr.appendChild(nameTd);
+        tr.appendChild(priceTd);
+
+        orderItemsElement.appendChild(tr);
+      }
+    </script>
+    <script>
+      const form = document.querySelector("#order-form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault(); // prevent the form from submitting
+        window.location.href = "/HTML/order-successful.html"; // redirect to new page
+      });
+    </script>
+  </body>
+</html>

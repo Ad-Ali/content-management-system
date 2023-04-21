@@ -4,6 +4,8 @@ const url =
 const productContainer = document.querySelector(".products");
 const featuredCheckbox = document.querySelector("#featured-checkbox");
 
+let testProducts;
+
 async function getProducts() {
   try {
     const response = await fetch(url);
@@ -12,6 +14,8 @@ async function getProducts() {
       createHTML(products, featuredCheckbox.checked);
     });
     createHTML(products);
+    console.log(products);
+    testProducts = products;
   } catch (error) {
     console.log(error);
   }

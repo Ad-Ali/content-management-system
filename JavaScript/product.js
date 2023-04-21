@@ -23,7 +23,7 @@ async function getProduct() {
         price: product.price,
         size,
       };
-      addToCart(item, product); // Call the addToCart function in common.js
+      addToCart(item, product); // Call the addToCart function
       console.log(getCart()); // Print the updated cart to the console
     });
   } catch (error) {
@@ -51,10 +51,10 @@ function displayProduct(product) {
   const sizeSelect = document.createElement("select");
   sizeSelect.name = "size";
   sizeSelect.id = "size-select";
-  sizeOptions.forEach((option) => {
+  sizeOptions.forEach((size) => {
     const sizeOption = document.createElement("option");
-    sizeOption.value = option;
-    sizeOption.textContent = option;
+    sizeOption.value = size;
+    sizeOption.textContent = size;
     sizeSelect.appendChild(sizeOption);
   });
   productSize.appendChild(sizeSelect);
@@ -67,3 +67,66 @@ const cartBtn = document.querySelector(".cart-btn");
 cartBtn.addEventListener("click", () => {
   window.location.href = "cart.html";
 });
+
+// ------------------ CART ---------------------------
+
+function getCart() {
+  // Get cart from localStorage, or create an empty cart if it doesn't exist
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  return cart;
+}
+
+function saveCart(cart) {
+  // Save cart to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function addToCart(item, product) {
+  // Get the cart from localStorage
+  let cart = getCart();
+
+  // Check if the item is already in the cart
+  const index = cart.findIndex(
+    (cartItem) => cartItem.id === item.id && cartItem.size === item.size
+  );
+
+  if (index >= 0) {
+    // If the item is already in the cart, update the quantity
+    cart[index].quantity++;
+  } else {
+    // If the item is not in the cart, add it to the cart
+    cart.push({
+      ...item,
+      quantity: 1,
+      image: product.images[0].src,
+    });
+  }
+
+  // Save the updated cart to localStorage
+  saveCart(cart);
+}
+
+function populateCart() {
+  const cartItems = document.querySelector(".cart-items");
+  let cart = getCart();
+  console.log("Cart from populateCart():", cart); // Add this line to check the value of cart
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Your cart is empty.</p>";
+  } else {
+    cartItems.innerHTML = "";
+    cartItems.textContent = ""; // move this line here
+    cart.forEach((item) => {
+      const cartItem = document.createElement("div");
+      cartItem.classList.add("cart-item");
+      cartItem.innerHTML = `
+              <div class="cart-item-image" style="background-image: url('${item.image}')"></div>
+              <div class="cart-item-details">
+                <h2 class="cart-item-title">${item.name}</h2>
+                <p class="cart-item-size">Size: ${item.size}</p>
+                <p class="cart-item-price">${item.quantity} x ${item.price}</p>
+              </div>
+            `;
+      cartItems.appendChild(cartItem);
+    });
+  }
+}

@@ -17,7 +17,8 @@
 }
 
 .product-details {
-  flex-basis: 50%;
+  flex-basis: 48%;
+  margin-left: 2%;
 }
 
 .product-title {
@@ -27,4 +28,35 @@
 .product-price {
   flex-basis: 50%;
   font-size: 24px;
+}
+
+.product-size {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-btn,
+.cart-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover,
+.cart-btn:hover {
+  background-color: #3e8e41;
+}
+
+.confirmation-message {
+  display: none;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 10px;
 }

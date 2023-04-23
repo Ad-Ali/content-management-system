@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../JavaScript/product.js" defer></script>
     <script src="../JavaScript/cart.js" defer></script>
+    <link rel="stylesheet" href="../CSS/cart.css" />
     <title>Cart</title>
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Size</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody class="cart-items"></tbody>
-      <tfoot>
-        <tr>
-          <td colspan="2">Total</td>
-          <td class="cart-total"></td>
-        </tr>
-      </tfoot>
-    </table>
-    <button class="checkout-btn">Checkout</button>
+    <div class="cart-container">
+      <div class="cart-header">
+        <div class="cart-header-item">Product Name</div>
+        <div class="cart-header-item">Size</div>
+        <div class="cart-header-item">Price</div>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total">Total</div>
+        <div class="cart-total-amount"></div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="clear-cart-btn">Empty Cart</button>
+      <button class="checkout-btn">Checkout</button>
+    </div>
   </body>
 </html>

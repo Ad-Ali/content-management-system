@@ -6,8 +6,13 @@ const productTitle = document.querySelector(".product-title");
 const productPrice = document.querySelector(".product-price");
 const productSize = document.querySelector(".product-size");
 const addToCartBtn = document.querySelector(".add-to-cart-btn");
+const productDescription = document.querySelector(".product-description");
 
 async function getProduct() {
+  if (!window.location.href.includes("product.html")) {
+    return;
+  }
+
   try {
     const response = await fetch(
       `https://rainydays-cma.flywheelsites.com/wp-json/wc/v3/products/${productId}?consumer_key=ck_b7d5f9a7eca859816bbe9d7f1a1134b8ebb2e44e&consumer_secret=cs_764aebbd432166b210a605379750a263fe3dbd00`
@@ -21,6 +26,7 @@ async function getProduct() {
         id: product.id,
         name: product.name,
         price: product.price,
+        description: product.description,
         size,
       };
       addToCart(item, product); // Call the addToCart function
@@ -44,6 +50,9 @@ function displayProduct(product) {
     currency: "NOK",
   }).format(product.price);
 
+  // Set product description
+  productDescription.innerHTML = product.description;
+
   // Create select element for product size
   const sizeOptions = product.attributes.find(
     (attr) => attr.name === "Size"
@@ -61,12 +70,6 @@ function displayProduct(product) {
 }
 
 getProduct();
-
-const cartBtn = document.querySelector(".cart-btn");
-
-cartBtn.addEventListener("click", () => {
-  window.location.href = "cart.html";
-});
 
 // ------------------ CART ---------------------------
 
@@ -104,17 +107,53 @@ function addToCart(item, product) {
 
   // Save the updated cart to localStorage
   saveCart(cart);
+
+  // Show the confirmation message
+  const confirmationMessage = document.querySelector(".confirmation-message");
+  confirmationMessage.style.display = "block";
+  setTimeout(() => {
+    confirmationMessage.style.display = "none";
+  }, 3000);
 }
+
+function emptyCart() {
+  // Set cart to an empty array
+  let cart = [];
+
+  // Save the updated cart to localStorage
+  saveCart(cart);
+
+  // Reload the cart display with the new cart data
+  populateCart();
+
+  // Set the cart total
+  cartTotal.textContent = new Intl.NumberFormat("no-NO", {
+    style: "currency",
+    currency: "NOK",
+  }).format(0);
+}
+
+const clearCartBtn = document.querySelector(".clear-cart-btn");
+if (window.location.href.includes("cart.html")) {
+  clearCartBtn.addEventListener("click", () => {
+    emptyCart();
+  });
+}
+
+const cartTotal = document.querySelector(".cart-total");
 
 function populateCart() {
   const cartItems = document.querySelector(".cart-items");
   let cart = getCart();
-  console.log("Cart from populateCart():", cart); // Add this line to check the value of cart
+  console.log("Cart from populateCart():", cart);
+
+  // Clear the existing cart items
+  cartItems.innerHTML = "";
+
   if (cart.length === 0) {
     cartItems.innerHTML = "<p>Your cart is empty.</p>";
   } else {
-    cartItems.innerHTML = "";
-    cartItems.textContent = ""; // move this line here
+    let total = 0;
     cart.forEach((item) => {
       const cartItem = document.createElement("div");
       cartItem.classList.add("cart-item");
@@ -127,6 +166,14 @@ function populateCart() {
               </div>
             `;
       cartItems.appendChild(cartItem);
+
+      total += item.quantity * item.price;
     });
+
+    // Set the cart total
+    cartTotal.textContent = new Intl.NumberFormat("no-NO", {
+      style: "currency",
+      currency: "NOK",
+    }).format(total);
   }
 }
